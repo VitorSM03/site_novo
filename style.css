@@ -1,0 +1,108 @@
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;     
+    height: 100vh;           
+    margin: 0;               
+    flex-direction: column;   
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 20px;
+    padding: 0;
+}
+
+ul li {
+    width: 150px;
+    height: 240px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 25px #000;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: 2s;
+    --cor1: #00ff15;
+}
+
+ul li:hover {
+    width: 220px;
+}
+
+ul li .icon,
+ul li .text {
+    position: absolute;
+    transition: 0.5s;
+}
+
+ul li .icon {
+    color: #8f8f8f;
+    font-size: 60px;
+    opacity: 1;
+}
+
+ul li .text {
+    color: #000;
+    font-size: 18px;
+    opacity: 0;
+    transform: scale(0); 
+}
+
+
+ul li:hover .icon {
+    opacity: 0;
+    transform: scale(0);
+}
+
+ul li:hover .text {
+    opacity: 1;
+    transform: scale(1);
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    background-color: var(--cor1);
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s, background-color 0.5s;
+    z-index: 0;
+}
+
+ul li:hover::before {
+    opacity: 1;
+}
+
+.logo-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 0;
+    width: calc(100vw - 50px); 
+    max-width: 100%; 
+    box-sizing: border-box; 
+}
+
